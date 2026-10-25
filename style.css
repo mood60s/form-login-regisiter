@@ -1,5 +1,5 @@
-@import url("./Component.css");
-@import url("./MyNormlaize.css");
+@import url("../Component.css");
+@import url("../MyNormlaize.css");
 @scope (form) {
   :scope {
     padding: 20px;
