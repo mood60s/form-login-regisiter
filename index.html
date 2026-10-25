@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+      integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="error-message"></div>
+    <div class="auth-container">
+      <div class="auth-card">
+        <!-- Start Sign-inForm  Front -->
+        <form id="sign-inForm" class="face front">
+          <div class="title">
+            <h3>sign in</h3>
+          </div>
+          <div class="box-input">
+            <input
+              type="text"
+              placeholder="username or email"
+              id="username-input"
+              minlength="6"
+              maxlength="8"
+              required
+            />
+            <span class="shape-input"></span>
+          </div>
+          <div class="box-input">
+            <input
+              type="password"
+              minlength="6"
+              maxlength="10"
+              placeholder="password"
+              required
+              id="password-input"
+              Show="false"
+            />
+            <div class="shape-input"></div>
+            <button
+              type="button"
+              class="toggle"
+              id="toggle-password"
+              aria-pressed="false"
+            >
+              <i class="fa-solid fa-eye icon-eye"></i>
+              <i class="fa-solid fa-eye-slash icon-eye-off"></i>
+            </button>
+          </div>
+          <div class="remember-box">
+            <input type="checkbox" id="check" />
+            <label for="check">remember me</label>
+            <i class="fa-solid fa-check check"></i>
+          </div>
+          <div class="actions">
+            <button
+              type="submit"
+              class="sign-in component-button1"
+              id="sign-in"
+            >
+              sign in
+            </button>
+            <a href="#" class="forgot-password">forgot password?</a>
+          </div>
+          <div class="or">
+            <div class="shape">OR</div>
+          </div>
+          <div class="facebook-google">
+            <a href="#"
+              >continue with google<i class="fa-brands fa-google"></i
+            ></a>
+            <a href="#"
+              >continue with facebook<i class="fa-brands fa-facebook-f"></i
+            ></a>
+          </div>
+          <button class="sign-up component-button2" type="button">
+            don't have account sign up
+          </button>
+        </form>
+        <!--Start Sign-inForm  Front  -->
+        <!-- Signup Form Back -->
+        <form class="face back" id="create-account">
+          <div class="title">
+            <h3>create new account</h3>
+          </div>
+          <div class="box-input">
+            <input
+              type="text"
+              placeholder="username"
+              id="username"
+              minlength="6"
+              maxlength="8"
+              required
+            />
+            <span class="shape-input"></span>
+          </div>
+          <div class="box-input">
+            <input
+              type="email"
+              id="email"
+              placeholder="email Addresses"
+              required
+            />
+            <span class="shape-input"></span>
+          </div>
+          <div class="box-input">
+            <input
+              type="password"
+              minlength="6"
+              maxlength="10"
+              placeholder="password"
+              id="passowrd-user-1"
+              required
+              Show="false"
+            />
+            <div class="shape-input"></div>
+            <button
+              type="button"
+              class="toggle confirm-passwordToggle1"
+              aria-pressed="false"
+            >
+              <i class="fa-solid fa-eye icon-eye"></i>
+              <i class="fa-solid fa-eye-slash icon-eye-off"></i>
+            </button>
+          </div>
+          <div class="box-input">
+            <input
+              type="password"
+              id="password-user-2"
+              minlength="6"
+              maxlength="10"
+              placeholder="confirm password"
+              required
+              Show="false"
+            />
+            <div class="shape-input"></div>
+            <button
+              type="button"
+              class="toggle confirm-passwordToggle2"
+              aria-pressed="false"
+            >
+              <i class="fa-solid fa-eye icon-eye"></i>
+              <i class="fa-solid fa-eye-slash icon-eye-off"></i>
+            </button>
+          </div>
+          <div class="remember-box">
+            <input type="checkbox" id="check2" name="teams conditions" />
+            <label for="check2">i agree with teams &amp; conditions</label>
+            <i class="fa-solid fa-check check"></i>
+          </div>
+          <button
+            type="submit"
+            class="create-account component-button1"
+            id="create-Account"
+          >
+            create Account
+          </button>
+          <div class="or">
+            <div class="shape">OR</div>
+          </div>
+          <button class="back-toSignIn component-button2" type="button">
+            already have an account? sign in
+          </button>
+        </form>
+        <!-- end signup form -->
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

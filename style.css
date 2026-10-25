@@ -1,0 +1,233 @@
+@import url("/Component.css");
+@import url("/MyNormlaize.css");
+@scope (form) {
+  :scope {
+    padding: 20px;
+    background-color: var(--sec-color);
+    border-radius: 4px;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+  }
+  /* title */
+  .title {
+    h3 {
+      font-size: 30px;
+      color: var(--fourth-color);
+      margin: 10px 0;
+    }
+  }
+  /* input */
+  .box-input {
+    width: 100%;
+    position: relative;
+    input {
+      background: transparent;
+      padding: 6px;
+      width: 100%;
+      border: transparent;
+      border-bottom: 1px solid var(--main-color);
+      font-size: 17px;
+      outline: none;
+      color: var(--fourth-color);
+      margin: 10px 0;
+      height: 40px;
+      &:focus,
+      &:focus + .shape-input,
+      &:valid + .shape-input {
+        height: 40px;
+        border-bottom: none;
+        padding: 6px;
+      }
+      &::placeholder {
+        transition: 0.3s opacity linear;
+      }
+      &:focus::placeholder {
+        opacity: 0;
+      }
+      position: relative;
+      z-index: 1;
+    }
+    .shape-input {
+      background-color: var(--main-color);
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 100%;
+      height: 0px;
+      transition: 0.3s linear height;
+    }
+
+    /* position the toggle Icons*/
+    input:valid ~ .toggle {
+      opacity: 0.7;
+    }
+    .toggle {
+      position: absolute;
+      right: 6px;
+      top: 16px;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px;
+      background: none;
+      border: none;
+      border-radius: 4px;
+      color: var(--fourth-color);
+      font-size: 18px;
+      opacity: 0;
+      cursor: pointer;
+      transition: 0.3s opacity;
+      &:hover {
+        opacity: 1;
+      }
+      &:focus-visible {
+        outline: 2px solid var(--fourth-color);
+      }
+      .icon-eye-off {
+        display: none;
+      }
+      &[aria-pressed="true"] {
+        .icon-eye {
+          display: none;
+        }
+        .icon-eye-off {
+          display: block;
+        }
+      }
+    }
+  }
+  /* remember-me */
+  .remember-box {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    input {
+      display: none;
+    }
+    input:checked + label + .check {
+      opacity: 1;
+    }
+    label {
+      cursor: pointer;
+      font-size: 17px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      color: var(--fourth-color);
+    }
+    .check {
+      color: var(--fourth-color);
+      opacity: 0;
+      transition: 0.3s opacity linear;
+      margin-left: 10px;
+      font-size: 16px;
+    }
+  }
+  /* actions buttons */
+  .actions {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .forgot-password {
+      text-align: center;
+      margin-bottom: 10px;
+      color: var(--fourth-color);
+    }
+  }
+  /* Shape*/
+  .or {
+    /* display: flex; */
+    /* flex-direction: column; */
+    width: 100%;
+    /* Shape */
+    .shape {
+      text-align: center;
+      position: relative;
+      color: var(--fourth-color);
+      margin-bottom: 20px;
+      font-size: 20px;
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 1px;
+        width: 40%;
+        background: linear-gradient(
+          to right,
+          var(--sec-color),
+          var(--fourth-color)
+        );
+      }
+      &::before {
+        left: 0;
+        opacity: 0.5;
+      }
+      &::after {
+        right: 0;
+        opacity: 0.5;
+      }
+    }
+    /* Google and Facebook Links */
+  }
+  /* Actions facebook google */
+  .facebook-google {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    a {
+      color: var(--fourth-color);
+      text-shadow: 1px -3px 1px var(--main-color);
+      transition: 0.3s linear;
+      margin-bottom: 10px;
+      &:hover {
+        text-shadow: 1px 3px 1px var(--main-color);
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+/* Flipping Card On Click */
+@scope (.auth-container) {
+  :scope {
+    perspective: 1000px;
+    width: 400px;
+    height: 562px;
+  }
+  .auth-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: 0.8s;
+    transform-style: preserve-3d;
+    &.flip {
+      transform: rotateY(180deg);
+      .front {
+        opacity: 0;
+      }
+      .back {
+        opacity: 1;
+      }
+    }
+    .back {
+      opacity: 0;
+    }
+    .face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      backface-visibility: hidden;
+      transition: 0.3s;
+    }
+    .back {
+      transform: rotateY(-180deg);
+    }
+  }
+}

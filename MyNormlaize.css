@@ -1,0 +1,21 @@
+/* initilziation */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --main-color: #0c0c0c;
+  --sec-color: #481e14;
+  --third-color: #9b3922;
+  --fourth-color: #f2613f;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--main-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-transform: capitalize;
+}

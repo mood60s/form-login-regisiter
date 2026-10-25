@@ -1,0 +1,66 @@
+.component-button1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  width: 100%;
+  padding: 10px 15px;
+  border: 2px solid var(--fourth-color);
+  border-radius: 6px;
+  background-color: var(--fourth-color);
+  color: var(--main-color);
+  font-size: 17px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition:
+    0.3s background-color,
+    0.3s color,
+    0.3s transform;
+  &:hover {
+    background-color: var(--third-color);
+    border-color: var(--third-color);
+    color: var(--fourth-color);
+  }
+  &:active {
+    transform: scale(0.97);
+  }
+  &:focus-visible {
+    outline: 2px solid var(--fourth-color);
+    outline-offset: 3px;
+  }
+}
+.component-button2 {
+    background-color: var(--fourth-color);
+    cursor: pointer;
+    padding: 10px 15px;
+    margin: 20px auto 40px;
+    border: 1px solid transparent;
+    color: var(--main-color);
+    border-radius: 6px;
+    corner-shape: bevel;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    &:hover {
+      background: transparent;
+      color: var(--fourth-color);
+      border-color: var(--fourth-color);
+    }
+  }
+/* end buttons component */
+/* Error Messsage for Validate inputs */
+.error-message {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--third-color);
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  color: var(--main-color);
+  opacity: 0;
+  transition: 0.3s;
+  font-size: 25px;
+}
